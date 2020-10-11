@@ -1,0 +1,136 @@
+//FA20-BSE-097(SECTION A&B ,GROUP 2)
+//MUHAMMAD HAMZA FAROOQ
+#include<stdio.h>
+int main()
+{
+    //THERSE ARE VARIABLES
+    int code;
+    int quan;
+    int total;
+    int less;
+    int payable;
+    //THESE STATEMENT PRINTS A WELCOME NOTE TO USER
+    printf("\t\t\t\t\t***********************************\n"
+           "\t\t\t\t\t*'WELCOME TO ULTRA ONLINE STORE'  * \n"
+           "\t\t\t\t\t*********************************** \n");
+    //HERE ARE SOME POLICY STATEMENTS
+    printf("POLICY STATEMENT:\n"
+           "       #1  You can select Product by its Product Code.\n"
+           "       #2  You can select 1 Product at a time you want to buy.\n"
+           "       #3  If you entered Invalid Code,Then restart program.\n"
+           "       #4  Price is fixed for each Product according to standards.\n"
+           "       #5  But if you buy more than 10,000Rs ,Then  you  will  be\n"
+           "           given 10%% Discount of Total Amount.\n\n");
+
+
+    //THESE STATEMENTS DISPLAY DETAILED LIST OF PRODUTS
+    printf("PRODUCT CODE    PRODUCT NAME    RATE/UNIT\n\n"
+    "  2244           Register        100/unit\n\n"
+    "  3366           Clipboard       120/unit\n\n"
+    "  4488           Dux Pen         150/unit\n\n"
+    "  5500           Math Box        200/unit\n\n"
+    "  6611           Dux Math Box    250/unit\n\n"
+    "  0000           More Items      -------- \n");
+    //THIS STATEMENT ASK USER TO ENTER CODE OF PRODUCT HE WANTS TO BUY
+    printf("------------------------------------------------------------------------------------------------------------------------\n");
+    printf("Enter 4 Digit Product Code from above List\n");
+    scanf("%d", &code);
+    //HERE IS A DECISION THAT, IF THE PROGRAM WILL PROCEED OR NOT!
+    if(code==2244||code==3366||code==4488||code==5500||code==6611)
+    {
+     printf("Now Enter Quantity you want to Buy\n");
+    scanf("%d", &quan);
+    }
+    else if(code==0000)
+    {
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+        printf("\t\t\t\t\t\t*******\n\t\t\t\t\t\t*SORRY*\n\t\t\t\t\t\t*******\n");
+        printf("\n\t\t\t\t *NO MORE ITEMS AVAILABLE YET\n");
+        printf("\t\t\t\t *RESTART PROGRAM TO ENTER CODE AGAIN\n");
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+    }
+    //IF CODE MATCHES PROGRAM ASKS FOR QUANTITY OTHERWISE ACT UPON THIS ELSE STATEMENT
+    else/*THIS ELSE STATEMENT WILL INFORM USER THAT HE/SHE HAS ENTERED A CODE WHICH IS NOT FROM ABOVE LIST*/
+    {
+        printf("\n------------------------------------------------------------------------------------------------------------------------");
+       printf("\n\t\t\t\t\t\t*******\n"
+              "\t\t\t\t\t\t*Oops!*\n"
+              "\t\t\t\t\t\t*******");
+       printf("\n\n  *Invalid Product Code");
+       printf("\n  *Enter Code from above List.");
+       printf("\n  *Run Program Again And Enter Valid Code\n");
+    }
+
+    /*THERE IS A SEQUENCE OF DECCISIONS AND ACTIONS ABOUT PRODUCT CODE ENTERED BY USER*/
+
+     //THIS IF STATEMENT TAKES ACTION WHEN 1st ITEM IS SELECTED
+    if(code==2244)
+    {
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+        printf("Product Name    Product code    Rate\t\tQuantity\n  Register"
+               "       2244           100/unit       \t%d\n\n", quan);
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+        total=quan*100;
+        printf("\t*Total Price is %d PKR\n", total);
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+    }
+    else if(code==3366)
+    {
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+        printf("Product Name    Product code     Rate\t\tQuantity\n  Clipboard       3366         120/unit\t\t%d\n\n", quan);
+         printf("------------------------------------------------------------------------------------------------------------------------\n");
+        total=quan*120;
+        printf("\t*Total Price is %d PKR\n", total);
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+    }
+    //THIS IF STATEMENT TAKES ACTION WHEN 3rd ITEM IS SELECTED
+
+    else if(code==4488)
+    {
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+        printf("Product Name    Product code    Rate\t\tQuantity\n  Dux Pen       4488            150/unit\t%d\n\n", quan);
+         printf("------------------------------------------------------------------------------------------------------------------------\n");
+        total=quan*150;
+        printf("\t*Total Price is %d PKR\n", total);
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+    }
+    //THIS IF STATEMENT TAKES ACTION WHEN 4th ITEM IS SELECTED
+
+    else if(code==5500)
+    {
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+        printf("Product Name    Product code    Rate\t\tQuantity\n  Math Box       5500           200/unit\t%d\n\n", quan);
+         printf("------------------------------------------------------------------------------------------------------------------------\n");
+        total=quan*200;
+        printf("\t*Total Price is %d PKR\n", total);
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+
+    }
+    //THIS IF STATEMENT TAKES ACTION WHEN 5th ITEM IS SELECTED
+    else if(code==6611)
+    {
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+        printf("Product Name    Product code    Rate\t\tQuantity\nDux Math Box     6611           250/unit\t%d\n\n", quan);
+         printf("------------------------------------------------------------------------------------------------------------------------\n");
+        total=quan*250;
+        printf("\t*Total Price is %d PKR\n", total);
+        printf("------------------------------------------------------------------------------------------------------------------------\n");
+    }
+
+    //HERE IS ANOTHER IF STATEMENT FOR TAKING DECESION ABOUT DISCOUNT
+    if(total>10000)
+    {
+        printf("\n\n\t\t\t\t\t\t *****************\n"      /*THIS STATEMENT DISPLAYS "CONGRATULATIONS" TO CUSTOMER ABOUT DISCOUNT*/
+               "\t\t\t\t\t\t *CONGRATULATIONS*\n"
+               "\t\t\t\t\t\t *****************");
+        printf("\nAccording to our policy You are given 10%% Discount\n");
+        less=(total/100)*10;
+        printf("Discount=%d Rupees\n", less);
+        payable=total-less;
+         printf("------------------------------------------------------------------------------------------------------------------------\n");
+        printf("\n\t*Total Payable Bill Is %d PKR\n\n", payable);
+         printf("------------------------------------------------------------------------------------------------------------------------\n");
+    }
+
+return 0;
+}
