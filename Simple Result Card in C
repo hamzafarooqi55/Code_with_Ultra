@@ -1,0 +1,80 @@
+//FA20-BSE-097
+//MUHAMMAD HAMZA FAROOQ
+#include<stdio.h>
+int main()
+{
+    #define TOTAL 500
+    float eng;
+    float math;
+    float urdu;
+    float sci;
+    float isl;
+    float total;
+    float perc;
+    printf("\t\t\t\t\t************************\n"
+           "\t\t\t\t\t* PERCENTAGE AND GRADE *\n"
+           "\t\t\t\t\t************************\n\n\n");
+    printf("\t  *Enter Marks Obtained\n");
+    printf("English    = ");
+    scanf(" %f", &eng);
+    printf("\nMaths      = ");
+    scanf(" %f", &math);
+    printf("\nUrdu       = ");
+    scanf(" %f", &urdu);
+    printf("\nIslamiyat  = ");
+    scanf(" %f", &isl);
+    printf("\nScience    = ");
+    scanf(" %f", &sci);
+    total=eng+math+urdu+sci+isl;
+    printf("\t\t  ------------------------------------------------------\n");
+    printf("\t\t |\t\t  ******************\t\t\t|\n"
+           "\t\t |\t\t  * RESULT SUMMARY *\t\t\t|\n"
+           "\t\t |\t\t  ******************\t\t\t|\n"
+           "\t\t |\t\t\t                  \t\t|\n");
+
+    printf("\t\t |\t  *SUBJECT\t *T.MARKS\t *Obtained\t|\n"
+           "\t\t |\t\t\t\t\t\t\t|\n"
+           "\t\t |\t1) English\t  100\t\t   %.2f\t|\n"
+           "\t\t |\t\t\t\t\t\t\t|\n"
+           "\t\t |\t2) Maths\t\  100\t\t   %.2f\t|\n"
+           "\t\t |\t\t\t\t\t\t\t|\n "
+           "\t\t |\t3) Urdu\t\t  100\t\t   %.2f\t|\n"
+           "\t\t |\t\t\t\t\t\t\t|\n"
+           "\t\t |\t4) Science\t  100\t\t   %.2f\t|\n"
+           "\t\t |\t\t\t\t\t\t\t|\n "
+           "\t\t |\t) Islamiyat\t  100\t\t   %.2f\t|\n",eng,math,urdu,sci,isl);
+    printf("\t\t |\t*Total Obtained Marks =  %.2f\t\t\t|\n", total);
+    perc=(total/TOTAL)*100;
+    printf("\t\t |\t*Percentage           =  %.2f\t\t\t|\n", perc);
+
+    if(perc>90)
+        printf("\t\t |\t*Grades            =  A+\t\t\t\t|\n");
+    else if(perc>80&&perc<=90)
+        printf("\t\t |\t*Grades               =  A\t\t\t|\n");
+    else if(perc>75&&perc<=80)
+        printf("\t\t |\t*Grades               =  B+\t\t\t|\n");
+    else if(perc>70&&perc<=75)
+        printf("\t\t |\t*Grades               =  B\t\t\t|\n");
+    else if(perc>60&&perc<=70)
+        printf("\t\t |\t*Grades               =  C+\t\t\t|\n");
+    else if(perc>50&&perc<=60)
+        printf("\t\t |\t*Grades               =  C\t\t\t|\n");
+    else if(perc>=40&&perc<=50)
+        printf("\t\t |\t*Grades               =  D\t\t\t|\n");
+    else if(perc>=0&&perc<40)
+        printf("\t\t |\t*Fail.........................!\t\t\t|\n");
+
+
+
+    printf("\t\t  ------------------------------------------------------\n");
+
+
+
+
+
+
+
+
+
+return 0;
+}
